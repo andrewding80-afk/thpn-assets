@@ -1,0 +1,8 @@
+{
+  "input_images": ["inputs/blueprint_square_B.png", "inputs/style_ref_square.png"],
+  "size": "1024x1024",
+  "quality": "high",
+  "n": 3,
+  "input_fidelity": "high",
+  "prompt": "Two images are provided: a flat vector BLUEPRINT (a square gold ticket with ornate border and empty center) and a STYLE REFERENCE (an aged voucher with dumplings and text). Re-render the BLUEPRINT in the exact aged chromolithograph print style of the STYLE REFERENCE. Preserve the blueprint's geometry precisely: the gold ticket fills the entire frame edge to edge with only a thin white keyline and cinnabar red border around it - NO green field, NO floating ticket, square corners with no notches. Same double rules and the same key-fret border pattern - each fret unit is a PAIR of spirals facing each other; reproduce that paired form exactly. At each corner of the fret band, one bold continuous hook wraps around the corner and connects flush to both bands - no gaps. Do not add any ornament, elements, text, lettering, food, or decoration - the center must remain empty gold paper. Do not copy content from the style reference; use it only for texture and print character. Colors exactly: harvest gold field #E0AC45, dark gold ochre borders and fret #8A6B22, white keyline, cinnabar outer edge #D93A35. Render bright and well-lit: colors must stay vivid and true to these hex values - do not darken, mute, or desaturate, and do not add any dark aging wash. Apply subtle paper grain, slight ink spread, aged print texture, engraved line character - aging gentle and even, no heavy stains. Flat traditional print illustration, no photorealism, no shadows."
+}
