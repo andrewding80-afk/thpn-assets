@@ -1,0 +1,30 @@
+name: Generate assets
+on:
+  workflow_dispatch:
+    inputs:
+      jobs:
+        description: "Space-separated job names (blank = all jobs)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - name: Run generation jobs
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: python pipeline/generate.py ${{ github.event.inputs.jobs }}
+      - name: Commit results
+        run: |
+          git config user.name "thpn-pipeline"
+          git config user.email "pipeline@users.noreply.github.com"
+          git add outputs/
+          git diff --cached --quiet || git commit -m "Generated: ${{ github.event.inputs.jobs || 'all jobs' }}"
+          git push
