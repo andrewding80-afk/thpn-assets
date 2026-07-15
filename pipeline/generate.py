@@ -12,7 +12,7 @@ import sys
 import requests
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-API_KEY = os.environ["OPENAI_API_KEY"]
+API_KEY = os.environ["OPENAI_API_KEY"].strip()
 ENDPOINT = "https://api.openai.com/v1/images/edits"
 
 
